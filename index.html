@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LITTARDO</title>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .pointer {
+            cursor: pointer;
+        }
+
+        .padding {
+            padding: 0 2rem 0 2rem;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem 1rem 2rem;
+            background: linear-gradient(180deg, rgba(242, 202, 136, 0.88) -27.7%, rgba(255, 255, 255,
+0.88) 119.23%);
+        }
+
+        .logo img {
+            width: 2.5rem;
+            height: auto;
+        }
+
+        .nav-right {
+            display: flex;
+            justify-content: space-between;
+            width: 65%;
+        }
+
+        .nav-right input {
+            width: 40rem;
+            height: 2rem;
+            border-radius: 5px;
+            border: none;
+            padding-left: 1rem;
+        }
+        
+        .nav-right button {
+            width: 4rem;
+            border: none;
+        }
+
+        .nav-right .login-btn {
+            background: linear-gradient(180deg, #F2CA88 0%, #EDB25A 100%);
+            box-shadow: 0px 12px 20px 0px rgba(233, 155, 57, 0.56);
+        }
+
+        /* category section  */
+        .category {
+            margin-top: 2rem;
+        }
+
+        .category .cat-names {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-inline-start: 0px;
+            list-style: none;
+            font-size: 13px;
+        }
+        
+        .category .cat-img {
+            list-style: none;
+            padding-inline-start: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cat-img li {
+            height: 9rem;
+            width: 7rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 2rem;
+        }
+        .cat-img-wrapper {
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        .cat-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+        .cat-img li p {
+            width: 80%;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        /* hero section  */
+        .hero {
+            padding-top: 3rem;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 1rem;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            height: 400px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide img {
+            width: 100rem;
+            height: fit-content;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            border: 2px solid white;
+            border-radius: 50%;
+            background-color: transparent;
+            width: 40px;
+            height: 40px;
+            font-size: 30px;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .carousel-button_prev {
+            left: 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .carousel-button_next {
+            color: white;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .indicators {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .indicator {
+            border: 2px solid white;
+            border-radius: 50%;
+            background-color: transparent;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <section class="navbar">
+        <div class="logo pointer">
+            <img src="./images/loip-logo.png" alt="logo">
+        </div>
+
+        <div class="nav-right">
+            <input type="text" placeholder="Search for a product/item">
+    
+            <button class="login-btn pointer">Login</button>
+            <button class="cart pointer">Cart</button>
+            
+        </div>
+    </section>
+
+    <section class="category padding">
+        <ul class="cat-names">
+            <li>Groceries</li>
+            <li>|</li>
+            <li>Mobile Phones</li>
+            <li>|</li>
+            <li>Personal Care</li>
+            <li>|</li>
+            <li>Books</li>
+            <li>|</li>
+            <li>Appliances</li>
+            <li>|</li>
+            <li>Electronics</li>
+            <li>|</li>
+            <li>Furniture</li>
+            <li>|</li>
+            <li>Home</li>
+            <li>|</li>
+            <li>Beauty & Wellness</li>
+            <li>|</li>
+            <li>Baby Care & Toys</li>
+            <li>|</li>
+            <li>Pet Supplier</li>
+            <li>|</li>
+            <li>Sports</li>
+            <li>|</li>
+            <li>Deals & Offers</li>
+        </ul>
+        <ul class="cat-img">
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Groceries</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Mobile Phones</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Personal Care</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Books</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Appliances</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Electronics</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Furniture</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Home</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Beauty & Wellness</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Baby Care & Toys</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Electronics</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Pet Supplies</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Sports</p>
+            </li>
+            <li>
+                <div class="cat-img-wrapper">
+                    <img src="https://source.unsplash.com/random" alt="1">
+                </div>
+                <p>Deals & Offers</p>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section class="hero padding">
+
+        <div class="carousel">
+            <div class="slides">
+              <div class="slide">
+                <img src="https://source.unsplash.com/random/1" alt="Image 1" />
+            </div>
+              <div class="slide">
+                <img src="https://source.unsplash.com/random/2" alt="Image 2" />
+            </div>
+              <div class="slide">
+                <img src="https://source.unsplash.com/random/3" alt="Image 3" />
+            </div>
+              <div class="slide">
+                <img src="https://source.unsplash.com/random/4" alt="Image 4" />
+            </div>
+            </div>
+            <button class="carousel-button carousel-button_prev"><</button>
+            <button class="carousel-button carousel-button_next">></button>
+            <div class="indicators">
+              <span class="indicator"></span>
+              <span class="indicator"></span>
+              <span class="indicator"></span>
+              <span class="indicator"></span>
+            </div>
+        </div>
+          
+
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
